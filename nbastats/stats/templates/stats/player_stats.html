@@ -1,0 +1,22 @@
+{% extends 'base_layout.html' %}
+<!DOCTYPE html>
+{% block content %}
+<div class="player-stats">
+	<div class="player">
+		<table style="width:100%">
+			<tr>
+				{% for header in headers %}
+					<th>{{ header }}</th>
+				{% endfor %}
+			</tr>{{ player.name }}
+			{% for row in stats %}
+				<tr>
+					{% for stat in row %}
+						<td>{{ stat }}</td>
+					{% endfor %}
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}

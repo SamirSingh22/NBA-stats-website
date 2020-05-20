@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %}
+	{% block content %}
+	<h1>Player List</h1>
+	<div class='players'>
+		<table style="width:100%">
+			{% for player in players %}
+				{% if player.is_active %}
+					<tr>
+						<div class='player'>
+							<td><a href="{% url 'player-stats' slug=player.slug%}">{{ player.full_name }}</a> </td>
+							<td>placeholder</td>
+						</div>
+					</tr>
+				{% endif %}
+			{% endfor %}
+		</table>
+	</div>
+	{% endblock %}

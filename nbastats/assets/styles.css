@@ -1,0 +1,107 @@
+body, ul, li, h1, h2, a{
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	text-decoration: none;
+}
+
+header{
+	background-color: #3f60ce;
+	width: 100%;
+	top:0;
+	bottom: 0;
+	posiiton: relative;
+	text-align: center;
+	position: sticky;
+
+}
+
+header h1{
+	display: inline-block;
+	max-height: 100px;
+}
+
+header img{
+	margin: 0 auto;
+	width: 50%;
+	vertical-align: middle;
+	max-width: 30%;
+}
+
+header span{
+	font-size: 70px;
+	vertical-align: middle;
+	color: white;
+}
+
+nav{
+	background-color: #dff3f1;
+	padding: 8px;
+	position: sticky;
+	top: 82px;
+	border: 1px solid black;
+}
+
+nav ul{
+	white-space: nowrap;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+nav li{
+	display: inline-block;
+	font-size: 20px;
+	width: 16.667%;
+	text-align: center;
+}
+
+nav .border{
+	border-right: 2px solid lightgray;
+}
+
+nav li a{
+	color: #8a7b7b;
+}
+
+body{
+	background-color: #e3e9f7;
+}
+
+body div h1{
+	padding: 20px 0;
+	text-align: center;
+
+}
+
+body th{
+	width: 25%;
+}
+
+body td{
+	text-align: center;
+}
+
+body div .players{
+	column-count: 3;
+}
+
+
+
+th, td{
+	margin: 0 auto;
+	padding: 0;
+}
+
+body div tr{
+	text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-top: 2%;
+}
+
+table, th, td {
+    border: 1px solid #afacac;
+}
