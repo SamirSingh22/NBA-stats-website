@@ -1,8 +1,17 @@
 {% extends 'base_layout.html' %}
+{% load static %}
 	{% block content %}
 	<h1>Player List</h1>
 	<div class='players'>
 		<table style="width:100%">
+			<tr class="header">
+				<th>
+					Player Name
+				</th>
+				<th>
+					Current Team
+				</th>
+			</tr>
 			{% for player in players %}
 				{% if player.is_active %}
 					<tr>
@@ -14,5 +23,39 @@
 				{% endif %}
 			{% endfor %}
 		</table>
+	</div>
+	<div class="pop-players">
+		<div class="lebron">
+			<a href={% url 'player-stats' slug='lebron-james'%}>
+				<img src="{% static 'lebron-james.jpg' %}" alt="LeBron James"/>
+				<div class="center">
+					<div class="img-text">LeBron James</div>
+				</div>
+			</a>
+		</div>
+	    <div class="giannis">
+			<a href={% url 'player-stats' slug='giannis-antetokounmpo'%}>
+				<img src="{% static 'giannis-antetokounmpo.jpg' %}" alt="Giannis Antentokounmpo"/>
+				<div class="center">
+					<div class="img-text">Giannis<br>Antetokounmpo</div>
+				</div>
+			</a>
+		</div>
+		<div class="steph">
+			<a href={% url 'player-stats' slug='stephen-curry'%}>
+				<img src="{% static 'stephen-curry.jpg' %}" alt="Stephen Curry"/>
+				<div class="center">
+					<div class="img-text">Stephen Curry</div>
+				</div>
+			</a>
+		</div>
+		<div class="joel">
+			<a href={% url 'player-stats' slug='joel-embiid'%}>
+				<img src="{% static 'joel-embiid.jpg' %}" alt="Joel Embiid"/>
+				<div class="center">
+					<div class="img-text">Joel Embiid</div>
+				</div>
+			</a>
+		</div>
 	</div>
 	{% endblock %}

@@ -5,14 +5,16 @@ body, ul, li, h1, h2, a{
 	text-decoration: none;
 }
 
+
 header{
-	background-color: #3f60ce;
+	background-color: #5876ff;
 	width: 100%;
 	top:0;
 	bottom: 0;
 	posiiton: relative;
 	text-align: center;
 	position: sticky;
+	z-index: 2;
 
 }
 
@@ -35,11 +37,12 @@ header span{
 }
 
 nav{
-	background-color: #dff3f1;
+	background-color: #ececec;
 	padding: 8px;
 	position: sticky;
 	top: 82px;
-	border: 1px solid black;
+	border: 1px solid #cacaca;
+	z-index: 2;
 }
 
 nav ul{
@@ -60,11 +63,11 @@ nav .border{
 }
 
 nav li a{
-	color: #8a7b7b;
+	color: #9e9999;
 }
 
 body{
-	background-color: #e3e9f7;
+	background-color: white;
 }
 
 body div h1{
@@ -75,33 +78,172 @@ body div h1{
 
 body th{
 	width: 25%;
+	background-color: #5876ff;
+	color: white;
 }
 
+
 body td{
-	text-align: center;
+	text-align: left;
+	border-bottom: 1px solid #ddd
 }
 
 body div .players{
-	column-count: 3;
+	column-count: 1;
 }
 
 
 
 th, td{
 	margin: 0 auto;
-	padding: 0;
+	padding: 10px;
+
 }
 
 body div tr{
+	text-align: left;
+}
+
+
+
+table {
+	border-collapse: collapse;
+    table-layout: fixed;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    max-width: 92%;
+    background-color: #fdfdfd;
+    display: block;
+    max-height: 800px;
+    overflow-y: scroll;
+    border-top: 1px solid #fdfd;
+    border-bottom: 1px solid #fdfd;
+}
+
+
+div .players{
+	width: 50%;
+	display: inline-block;
+	float: left;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+div .pop-players{
+	display: flex;
+	flex-wrap: wrap;
+	width: 47%;
+	margin: 1% 10px 7px;
+	/*position: relative;*/
+}
+
+.lebron, .giannis, .steph, .joel{
+	flex: 35%;
+	padding: 10px 10px 10px 10px;
+	position: relative;
 	text-align: center;
 }
 
-table {
-    border-collapse: collapse;
-    table-layout: fixed;
-    margin-top: 2%;
+div .pop-players img{
+	width: 100%;
+	float: left;
+	display: inline-block;
+	box-shadow: 5px 5px 5px grey;
+	transition: 1s ease;
 }
 
-table, th, td {
-    border: 1px solid #afacac;
+div .pop-players img:hover{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+}
+
+
+.center {
+	color: white;
+    transition: 1s ease;
+    opacity: 0;
+    font-size: 3.1vw;
+    font-weight: bold;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.giannis .center {
+	font-size: 2.7vw;
+}
+
+div .pop-players .lebron:hover .center{
+	opacity: 1;
+	font-size: 3.2vw;
+}
+
+div .pop-players .giannis:hover .center{
+	opacity: 1;
+	font-size: 2.8vw;
+}
+
+div .pop-players .steph:hover .center{
+	opacity: 1;
+	font-size: 3.2vw;
+}
+
+div .pop-players .joel:hover .center{
+	opacity: 1;
+	font-size: 3.2vw;
+}
+
+.lebron:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .8;
+	filter: brightness(50%);
+}
+
+.giannis:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.steph:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.joel:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
 }
