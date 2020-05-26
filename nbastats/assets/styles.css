@@ -3,6 +3,7 @@ body, ul, li, h1, h2, a{
 	padding: 0;
 	font-family: Arial;
 	text-decoration: none;
+	overflow-x: hidden;
 }
 
 
@@ -37,24 +38,26 @@ header span{
 }
 
 nav{
-	background-color: #ececec;
+	background-color: #082673;
 	padding: 8px;
 	position: sticky;
 	top: 82px;
-	border: 1px solid #cacaca;
+	border-top: 1px solid #a29b9b;
+	border-bottom: 1px solid #a29b9b;
 	z-index: 2;
 }
 
 nav ul{
 	white-space: nowrap;
-	max-width: 1200px;
+	width: 100%;
 	margin: 0 auto;
+	display: flex;
 }
 
 nav li{
 	display: inline-block;
 	font-size: 20px;
-	width: 16.667%;
+	flex-grow: 1;
 	text-align: center;
 }
 
@@ -63,112 +66,53 @@ nav .border{
 }
 
 nav li a{
-	color: #9e9999;
+	color: #ffffff;
 }
 
 body{
 	background-color: white;
 }
 
-body div h1{
-	padding: 20px 0;
-	text-align: center;
 
-}
-
-body th{
-	width: 25%;
-	background-color: #5876ff;
-	color: white;
-}
-
-
-body td{
-	text-align: left;
-	border-bottom: 1px solid #ddd
-}
-
-body div .players{
-	column-count: 1;
-}
-
-
-
-th, td{
-	margin: 0 auto;
-	padding: 10px;
-
-}
-
-body div tr{
-	text-align: left;
-}
-
-
-
-table {
-	border-collapse: collapse;
-    table-layout: fixed;
-    margin-top: 2%;
-    margin-left: 5%;
-    margin-bottom: 5%;
-    max-width: 92%;
-    background-color: #fdfdfd;
-    display: block;
-    max-height: 800px;
-    overflow-y: scroll;
-    border-top: 1px solid #fdfd;
-    border-bottom: 1px solid #fdfd;
-}
-
-
-div .players{
-	width: 50%;
+.body-title h1{
+	color: #2566b5;
+	opacity: .8;
+	padding: 1.25% 0 0.75% 0;
+	border-bottom: 2px solid #225cb3;
+	width: 35%;
+	transform: translateX(10%);
 	display: inline-block;
-	float: left;
+	font-size: 3vw;
+	text-align: left;
 }
 
-tr:nth-child(even) {
-	background-color: #f2f2f2;
+body > div > div.body-title{
+	float: right;
+	width: 100%;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+.list-title h1{
+	width: 17%;
 }
 
 
-
-div .pop-players{
+div .pop-players, div .teams{
 	display: flex;
 	flex-wrap: wrap;
-	width: 47%;
-	margin: 1% 10px 7px;
+	width: 96%;
+	padding: 1.5% 2% 2% 2%;
+	border-bottom: 1px solid lightgray;
 	/*position: relative;*/
 }
 
-.lebron, .giannis, .steph, .joel{
-	flex: 35%;
+.lebron, .giannis, .steph, .joel, .kevin, .kawhi, .russell, .james, .anthony, .damian{
+	flex: 16%;
 	padding: 10px 10px 10px 10px;
 	position: relative;
 	text-align: center;
 }
 
-div .pop-players img{
+div .pop-players img, .teams img{
 	width: 100%;
 	float: left;
 	display: inline-block;
@@ -197,7 +141,7 @@ div .pop-players img:hover{
 }
 
 .giannis .center {
-	font-size: 2.7vw;
+	font-size: 2.2vw;
 }
 
 div .pop-players .lebron:hover .center{
@@ -207,7 +151,7 @@ div .pop-players .lebron:hover .center{
 
 div .pop-players .giannis:hover .center{
 	opacity: 1;
-	font-size: 2.8vw;
+	font-size: 2.3vw;
 }
 
 div .pop-players .steph:hover .center{
@@ -220,10 +164,40 @@ div .pop-players .joel:hover .center{
 	font-size: 3.2vw;
 }
 
+div .pop-players .kevin:hover .center{
+	opacity: 1;
+	font-size: 3.2vw;
+}
+
+div .pop-players .kawhi:hover .center{
+	opacity: 1;
+	font-size: 3.2vw;
+}
+
+div .pop-players .james:hover .center{
+	opacity: 1;
+	font-size: 3.2vw;
+}
+
+div .pop-players .russell:hover .center{
+	opacity: 1;
+	font-size: 3.2vw;
+}
+
+div .pop-players .damian:hover .center{
+	opacity: 1;
+	font-size: 3.2vw;
+}
+
+div .pop-players .anthony:hover .center{
+	opacity: 1;
+	font-size: 3.2vw;
+}
+
 .lebron:hover img{
 	transform: scale(1.03, 1.03);
 	z-index: 1;
-	opacity: .8;
+	opacity: .6;
 	filter: brightness(50%);
 }
 
@@ -241,9 +215,572 @@ div .pop-players .joel:hover .center{
 	filter: brightness(50%);
 }
 
-.joel:hover img{
+.joel:hover img {
 	transform: scale(1.03, 1.03);
 	z-index: 1;
 	opacity: .6;
 	filter: brightness(50%);
 }
+
+.russell:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.kevin:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.kawhi:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.james:hover img {
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.anthony:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.damian:hover img {
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+div .list-title{
+	display: flex;
+}
+
+.list-title h1{
+	flex-grow: 1;
+	color: #2566b5;
+	opacity: .8;
+	padding: 1% 0 0 0;
+	border-bottom: 2px solid #225cb3;
+	width: 100%;
+	display: inline-block;
+	font-size: 3vw;
+	text-align: center;
+}
+
+
+div .players{
+	width: 100%;
+	display: flex;
+	margin-top: 1.3%;
+	height: 1000px;
+	position: relative;
+}
+
+div .active, .inactive{
+	flex-grow: 1;
+}
+
+.active{
+	padding:1.5% 0% 1% 4%;
+}
+
+.inactive{
+	padding: 1.5% 4% 1% 0;
+}
+
+.active h1{
+	width: 50%;
+	transform: translateX(23%);
+}
+
+.inactive h1{
+	width: 50%;
+	transform: translateX(27%);
+}
+
+div .active-table, .inactive-table{
+	flex-grow: 1;
+}
+
+.active-table{
+	padding:1% 4% 5% 8%;
+}
+
+.inactive-table{
+	padding: 1% 8% 5% 4%;
+}
+
+
+
+body th{
+	width: 50%;
+	background-color: #5876ff;
+	color: white;
+}
+
+
+body td{
+	text-align: left;
+	border-bottom: 1px solid #ddd
+}
+
+
+th, td{
+	margin: 0 auto;
+	padding: 10px;
+
+}
+
+body div tr{
+	text-align: left;
+}
+
+table > tbody > tr:hover{
+	background-color: #c3c3c3;
+}
+
+td a:hover {
+	text-decoration: underline;
+}
+
+.players table {
+ 	border-collapse: collapse;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    background-color: #fdfdfd;
+    display: block;
+    overflow-y: scroll;
+    border-top: 1px solid #fdfd;
+    border-bottom: 1px solid #fdfd; */
+}
+
+
+
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.blazers, .bucks, .bulls, .cavs, .celtics, .clippers, .grizzlies, .hawks, .heat, .hornets, .jazz, 
+.jazz, .kings, .knicks, .lakers, .mavs, .nets, .nuggets, .pacers, .pelicans, .pistons, .raptors,
+.rockets, .sixers, .spurs, .suns, .thunder, .warriors, .wizards, .wolves, .magic{
+	flex: 14%;
+	padding: 10px 10px;
+	position: relative;
+	text-align: center;
+}
+
+.teams .center{
+	font-size: 2.5vw;
+}
+
+.kings .center, .wizards .center{
+	font-size: 2.3vw;
+}
+
+.sixers .center{
+	font-size: 2.1vw;
+}
+
+.wolves .center{
+	font-size: 1.9vw;
+}
+
+.blazers:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.bucks:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.bulls:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.cavs:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.celtics:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.clippers:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.grizzlies:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.hawks:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.heat:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.hornets:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.jazz:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.kings:hover .center{
+	opacity: 1;
+	font-size: 2.5vw;
+}
+
+.knicks:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.lakers:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.magic:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.mavs:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.nets:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.nuggets:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.pacers:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.pelicans:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.pistons:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.raptors:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.rockets:hover .center{
+	opacity: 1;
+	font-size: 3.2vw;
+}
+
+.sixers:hover .center{
+	opacity: 1;
+	font-size: 2.3vw;
+}
+
+.spurs:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.suns:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.thunder:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.warriors:hover .center{
+	opacity: 1;
+	font-size: 2.7vw;
+}
+
+.wizards:hover .center{
+	opacity: 1;
+	font-size: 2.5vw;
+}
+
+.wolves:hover .center{
+	opacity: 1;
+	font-size: 2.1vw;
+}
+
+
+
+.blazers:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.bucks:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.bulls:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.cavs:hover img {
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.celtics:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.clippers:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.grizzlies:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.hawks:hover img {
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.heat:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.hornets:hover img {
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.jazz:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.kings:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.knicks:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.lakers:hover img {
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.magic:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.mavs:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.nets:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.nuggets:hover img {
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.pacers:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.pelicans:hover img {
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.pistons:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.raptors:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.rockets:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.sixers:hover img {
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.spurs:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.suns:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.thunder:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.warriors:hover img {
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.wizards:hover img{
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+.wolves:hover img {
+	transform: scale(1.03, 1.03);
+	z-index: 1;
+	opacity: .6;
+	filter: brightness(50%);
+}
+
+
+

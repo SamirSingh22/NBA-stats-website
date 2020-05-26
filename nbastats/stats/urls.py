@@ -8,6 +8,8 @@ from django.conf import settings
 
 
 urlpatterns = [
-	path('', views.player_list),
-	path('<slug>/', views.player_stats, name='player-stats')
+	path('players/', views.player_list, name='players-stats'),
+	path('', views.stats, name='stat-home'),
+	path('players/<slug>/', views.player_stats, name='player-stats'),
+	path('teams/', views.team_list, name='teams')
 ]
