@@ -6,7 +6,7 @@
 	</div>
 	<div class="pop-players">
 		<div class="lebron">
-			<a href={% url 'player-stats' slug='lebron-james'%}>
+			<a href={% url 'player-profile' slug='lebron-james'%}>
 				<img src="{% static 'players/lebron-james.jpg' %}" alt="LeBron James"/>
 				<div class="center">
 					<div class="img-text">LeBron James</div>
@@ -14,7 +14,7 @@
 			</a>
 		</div>
 		<div class="giannis">
-			<a href={% url 'player-stats' slug='giannis-antetokounmpo'%}>
+			<a href={% url 'player-profile' slug='giannis-antetokounmpo'%}>
 				<img src="{% static 'players/giannis-antetokounmpo.jpg' %}" alt="Giannis Antentokounmpo"/>
 				<div class="center">
 					<div class="img-text">Giannis<br>Antetokounmpo</div>
@@ -22,7 +22,7 @@
 			</a>
 		</div>
 		<div class="steph">
-			<a href={% url 'player-stats' slug='stephen-curry'%}>
+			<a href={% url 'player-profile' slug='stephen-curry'%}>
 				<img src="{% static 'players/stephen-curry.jpg' %}" alt="Stephen Curry"/>
 				<div class="center">
 					<div class="img-text">Stephen Curry</div>
@@ -30,7 +30,7 @@
 			</a>
 		</div>
 		<div class="joel">
-			<a href={% url 'player-stats' slug='joel-embiid'%}>
+			<a href={% url 'player-profile' slug='joel-embiid'%}>
 				<img src="{% static 'players/joel-embiid.jpg' %}" alt="Joel Embiid"/>
 				<div class="center">
 					<div class="img-text">Joel Embiid</div>
@@ -38,7 +38,7 @@
 			</a>
 		</div>
 		<div class="russell">
-			<a href={% url 'player-stats' slug='russell-westbrook'%}>
+			<a href={% url 'player-profile' slug='russell-westbrook'%}>
 				<img src="{% static 'players/russell-westbrook.jpg' %}" alt="Russell Westbrook"/>
 				<div class="center">
 					<div class="img-text">Russell Westbrook</div>
@@ -46,7 +46,7 @@
 			</a>
 		</div>
 		<div class="james">
-			<a href={% url 'player-stats' slug='james-harden'%}>
+			<a href={% url 'player-profile' slug='james-harden'%}>
 				<img src="{% static 'players/james-harden.jpg' %}" alt="James Harden"/>
 				<div class="center">
 					<div class="img-text">James Harden</div>
@@ -54,7 +54,7 @@
 			</a>
 		</div>
 		<div class="kawhi">
-			<a href={% url 'player-stats' slug='kawhi-leaonard'%}>
+			<a href={% url 'player-profile' slug='kawhi-leaonard'%}>
 				<img src="{% static 'players/kawhi-leaonard.jpg' %}" alt="Kawhi Leaonard"/>
 				<div class="center">
 					<div class="img-text">Kawhi Leonard</div>
@@ -62,7 +62,7 @@
 			</a>
 		</div>
 		<div class="kevin">
-			<a href={% url 'player-stats' slug='kevin-durant'%}>
+			<a href={% url 'player-profile' slug='kevin-durant'%}>
 				<img src="{% static 'players/kevin-durant.jpg' %}" alt="Kevin Durant"/>
 				<div class="center">
 					<div class="img-text">Kevin Durant</div>
@@ -70,7 +70,7 @@
 			</a>
 		</div>
 		<div class="damian">
-			<a href={% url 'player-stats' slug='damian-lillard'%}>
+			<a href={% url 'player-profile' slug='damian-lillard'%}>
 				<img src="{% static 'players/damian-lillard.jpg' %}" alt="Damian Lillard"/>
 				<div class="center">
 					<div class="img-text">Damian Lillard</div>
@@ -78,7 +78,7 @@
 			</a>
 		</div>
 		<div class="anthony">
-			<a href={% url 'player-stats' slug='anthony-davis'%}>
+			<a href={% url 'player-profile' slug='anthony-davis'%}>
 				<img src="{% static 'players/anthony-davis.jpg' %}" alt="Anthony Davis"/>
 				<div class="center">
 					<div class="img-text">Anthony Davis</div>
@@ -108,7 +108,7 @@
 					{% if player.is_active %}
 						<tr>
 							<div class='player'>
-								<td><a href="{% url 'player-stats' slug=player.slug%}">{{ player.full_name }}</a> </td>
+								<td><a href="{% url 'player-profile' slug=player.slug%}">{{ player.full_name }}</a> </td>
 								<td>placeholder</td>
 								<td>placeholder</td>
 							</div>
@@ -134,7 +134,7 @@
 					{% if player.is_active == False %}
 						<tr>
 							<div class='player'>
-								<td><a href="{% url 'player-stats' slug=player.slug%}">{{ player.full_name }}</a> </td>
+								<td><a href="{% url 'player-profile' slug=player.slug%}">{{ player.full_name }}</a> </td>
 								<td>placeholder</td>
 								<td>placeholder</td>
 							</div>

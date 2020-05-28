@@ -10,6 +10,7 @@ from django.conf import settings
 urlpatterns = [
 	path('players/', views.player_list, name='players-stats'),
 	path('', views.stats, name='stat-home'),
-	path('players/<slug>/', views.player_stats, name='player-stats'),
+	path('players/<slug>/', views.player_profile, name='player-profile'),
+	path('players/<slug>/career_stats/<per_mode>/', views.career_stats, name='career-stats'),
 	path('teams/', views.team_list, name='teams')
 ]

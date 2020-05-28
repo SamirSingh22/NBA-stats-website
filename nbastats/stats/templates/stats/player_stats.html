@@ -3,20 +3,48 @@
 {% block content %}
 <div class="player-stats">
 	<div class="player">
-		<table style="width:100%">
-			<tr>
-				{% for header in headers %}
-					<th>{{ header }}</th>
-				{% endfor %}
-			</tr>{{ player.name }}
-			{% for row in stats %}
+		<div class="dropdown">
+
+	    <button onclick="myFunction()" class="dropbtn">{{ per_mode }}</button>
+			<div id="myDropdown" class="dropdown-content">
+				<a href={% url 'career-stats' slug=player.slug per_mode=other_mode_link %}>{{ other_mode_name }}</a>
+			</div>
+			<script>
+				function myFunction() {
+				  document.getElementById("myDropdown").classList.toggle("show");
+				}
+
+				// Close the dropdown menu if the user clicks outside of it
+				window.onclick = function(event) {
+				  if (!event.target.matches('.dropbtn')) {
+					var dropdowns = document.getElementsByClassName("dropdown-content");
+					var i;
+					for (i = 0; i < dropdowns.length; i++) {
+					  var openDropdown = dropdowns[i];
+					  if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+					  }
+					}
+				  }
+				}
+			</script>
+		</div>
+		<div class="stat-table">
+			<table style="width:100%">
 				<tr>
-					{% for stat in row %}
-						<td>{{ stat }}</td>
+					{% for header in headers %}
+						<th>{{ header }}</th>
 					{% endfor %}
-				</tr>
-			{% endfor %}
-		</table>
+				</tr>{{ player.name }}
+				{% for row in stats %}
+					<tr>
+						{% for stat in row %}
+							<td>{{ stat }}</td>
+						{% endfor %}
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
 	</div>
 </div>
 {% endblock %}
