@@ -12,3 +12,14 @@ class Player(models.Model):
 	def __str__(self):
 		return self.full_name
 
+
+class Team(models.Model):
+	team_id = models.IntegerField()
+	team_name = models.CharField(max_length=50)
+	team_abr = models.CharField(max_length=10)
+	slug = models.SlugField()
+
+	def __str__(self):
+		return self.team_name
+
+

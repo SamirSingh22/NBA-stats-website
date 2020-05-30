@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Player
+from .models import Player, Team
 from . import stat_getter
 
 def stats(request):
@@ -12,17 +12,18 @@ def player_list(request):
 
 def career_stats(request, slug, per_mode):
 	modes = ['Per Game', 'Totals']
+	modes_link = ['PerGame', 'Totals']
 	player = Player.objects.get(slug=slug)
 	stats_h, stats_b = stat_getter.career_stats(player.player_id, per_mode)
-	if per_mode == 'PerGame':
-		other_mode_link = 'Totals'
-		other_mode_name = 'Totals'
+	ndx = 0
+	if per_mode == modes_link[1]:
+		ndx = 1
+		other = 0
 	else:
-		other_mode_link = 'PerGame'
-		other_mode_name = 'Per Game'
+		other = 1
 	return render(request, 'stats/player_stats.html', {'player': player, 'headers': stats_h, 'stats': stats_b,
-													   'per_mode': per_mode, 'other_mode_link': other_mode_link,
-													   'other_mode_name': other_mode_name})
+													   'per_mode': modes[ndx], 'other_mode_link': modes_link[other],
+													   'other_mode_name': modes_link[other]})
 
 def team_list(request):
 	return render(request, 'stats/list_team.html')
@@ -30,5 +31,9 @@ def team_list(request):
 def player_profile(request, slug):
 	player = Player.objects.get(slug=slug)
 	return render(request, 'stats/player_profile.html', {'player': player})
+
+def team_profile(request, slug):
+	team = Team.objects.get(slug=slug)
+	return render(request, 'stats/team_profile.html', {'team': team})
 
 # Create your views here.

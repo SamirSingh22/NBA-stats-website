@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import requests
 
 def career_stats(pid, per_mode):
-	pl = playercareerstats.PlayerCareerStats(pid, per_mode).season_totals_regular_season
+	pl = playercareerstats.PlayerCareerStats(per_mode36=per_mode, player_id=pid).season_totals_regular_season
 	stats = pl.get_dict()
 	stats_h = ['Season', 'Team', 'Age', 'GP', 'GS', 'Min', 'FGM', 'FGA', 'FG PCT', 'FG3M', 'FG3A', 'FG3 PCT', 'FTM',
 			   'FTA', 'FT PCT', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS']
