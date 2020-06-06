@@ -7,6 +7,8 @@ class Player(models.Model):
 	first_name = models.CharField(max_length=20)
 	last_name = models.CharField(max_length=5)
 	is_active = models.BooleanField()
+	first_season = models.CharField(max_length=10)
+	last_season = models.CharField(max_length=10)
 	slug = models.SlugField()
 
 	def __str__(self):

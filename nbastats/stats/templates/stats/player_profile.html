@@ -1,7 +1,51 @@
 {% extends 'base_layout.html' %}
 <!DOCTYPE html>
 {% block content %}
-	<h1>Career Stats</h1>
-	<h3><a href={% url 'career-stats' slug=player.slug per_mode='PerGame' %}>Per Game</a></h3>
-	<h3><a href={% url 'career-stats' slug=player.slug per_mode='Totals' %}>Totals</a></h3>
+	<div class="stat-container">
+		<div class="stat">
+			<h1>Career Stats</h1>
+			<h3><a href={% url 'career-stats' slug=player.slug per_mode='PerGame' %}>Per Game</a></h3>
+			<h3><a href={% url 'career-stats' slug=player.slug per_mode='Totals' %}>Totals</a></h3>
+		</div>
+		<div class="stat">
+			<h1>Placeholder</h1>
+			<h3><a href="#">Stat 1</a></h3>
+			<h3><a href="#">Stat 2</a></h3>
+		</div>
+		<div class="stat">
+			<h1>Placeholder</h1>
+			<h3><a href="#">Stat 1</a></h3>
+			<h3><a href="#">Stat 2</a></h3>
+		</div>
+		<div class="stat">
+			<h1>Placeholder</h1>
+			<h3><a href="#">Stat 1</a></h3>
+			<h3><a href="#">Stat 2</a></h3>
+		</div>
+		<div class="stat">
+			<h1>Placeholder</h1>
+			<h3><a href="#">Stat 1</a></h3>
+			<h3><a href="#">Stat 2</a></h3>
+		</div>
+		<div class="stat">
+			<h1>Placeholder</h1>
+			<h3><a href="#">Stat 1</a></h3>
+			<h3><a href="#">Stat 2</a></h3>
+		</div>
+		<div class="stat">
+			<h1>Placeholder</h1>
+			<h3><a href="#">Stat 1</a></h3>
+			<h3><a href="#">Stat 2</a></h3>
+		</div>
+		<div class="stat">
+			<h1>Placeholder</h1>
+			<h3><a href="#">Stat 1</a></h3>
+			<h3><a href="#">Stat 2</a></h3>
+		</div>
+		<div class="stat">
+			<h1>Placeholder</h1>
+			<h3><a href="#">Stat 1</a></h3>
+			<h3><a href="#">Stat 2</a></h3>
+		</div>
+	</div>
 {% endblock %}
