@@ -10,6 +10,12 @@ def player_list(request):
 	players = Player.objects.all().order_by('last_name')
 	return render(request, 'stats/list_player.html', {'players': players})
 
+def general_splits(request, slug, per_mode, detail):
+	player = Player.objects.get(slug=slug)
+	stats_h, stats_b = stat_getter.player_dashboard_general_splits(player.player_id, per_mode, detail)
+	return render(request, 'stats/player_stats_general_splits.html', {'player': player, 'headers': stats_h,
+																	  'stats': stats_b, 'per_mode': per_mode})
+
 def career_stats(request, slug, per_mode):
 	modes = ['Per Game', 'Totals']
 	modes_link = ['PerGame', 'Totals']
@@ -21,7 +27,7 @@ def career_stats(request, slug, per_mode):
 		other = 0
 	else:
 		other = 1
-	return render(request, 'stats/player_stats.html', {'player': player, 'headers': stats_h, 'stats': stats_b,
+	return render(request, 'stats/player_career_stats.html', {'player': player, 'headers': stats_h, 'stats': stats_b,
 													   'per_mode': modes[ndx], 'other_mode_link': modes_link[other],
 													   'other_mode_name': modes_link[other]})
 

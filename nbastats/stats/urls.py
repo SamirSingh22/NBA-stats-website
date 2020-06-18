@@ -14,5 +14,6 @@ urlpatterns = [
 	path('players/<slug>/career_stats/<per_mode>/', views.career_stats, name='career-stats'),
 	path('teams/', views.team_list, name='teams'),
 	path('team/<slug>/', views.team_profile, name='team-profile'),
-	path('team/<slug>/year_by_year_stats/<per_mode>/', views.year_by_year_stats, name='team-year-stats')
+	path('team/<slug>/year_by_year_stats/<per_mode>/', views.year_by_year_stats, name='team-year-stats'),
+	path('players/<slug>/general_splits/<detail>/<per_mode>/', views.general_splits, name='general-splits')
 ]

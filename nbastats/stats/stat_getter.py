@@ -36,9 +36,22 @@ def team_year_by_year(tid, per_mode):
 		stats.append(s)
 	return headers, stats
 
-def general_splits(pid, per_mode):
+def player_dashboard_general_splits(pid, per_mode, detail):
+	detail_dict = {
+		'overall': 0,
+		'location': 1,
+		'wins-losses': 2,
+		'month': 3,
+		'all-star': 4,
+		'starting position': 5,
+		'days rest': 6
+	}
 	player = PlayerDashboardByGeneralSplits(player_id=pid, per_mode_detailed=per_mode)
-	player = player.get_dict()
+	player = player.get_data_frames()[detail_dict['month']]
+	headers = player.axes[1]
+	stats = player.values
+	return headers, stats
+
 
 
 
